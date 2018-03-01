@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MqE-rO-2z7">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ISS Passes-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CoordinatesViewController" customModule="iss_passes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="blR-Um-ZiM">
+                                <rect key="frame" x="0.0" y="134" width="375" height="606"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYR-Xs-rMn">
+                                <rect key="frame" x="218" y="748" width="141" height="30"/>
+                                <state key="normal" title="ISS Current Location"/>
+                                <connections>
+                                    <action selector="issLocationButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WFk-SR-9Yc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJh-GE-HY7">
+                                <rect key="frame" x="115" y="96" width="145" height="30"/>
+                                <state key="normal" title="Show Both Locations"/>
+                                <connections>
+                                    <action selector="showAllButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="usg-eW-BX6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbm-ZZ-UFa">
+                                <rect key="frame" x="16" y="748" width="84" height="30"/>
+                                <state key="normal" title="My Location"/>
+                                <connections>
+                                    <action selector="myLocationButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XAS-7x-Pvv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="blR-Um-ZiM" firstAttribute="top" secondItem="OJh-GE-HY7" secondAttribute="bottom" constant="8" id="2RY-Dc-NdJ"/>
+                            <constraint firstItem="hbm-ZZ-UFa" firstAttribute="top" secondItem="blR-Um-ZiM" secondAttribute="bottom" constant="8" id="5FG-sR-91m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nYR-Xs-rMn" secondAttribute="trailing" constant="16" id="89i-vE-kGH"/>
+                            <constraint firstItem="hbm-ZZ-UFa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BlM-4s-TIZ"/>
+                            <constraint firstItem="OJh-GE-HY7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kf3-OP-KAT"/>
+                            <constraint firstItem="hbm-ZZ-UFa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="YvH-t5-GFg"/>
+                            <constraint firstItem="OJh-GE-HY7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Zy3-Tm-CLd"/>
+                            <constraint firstItem="nYR-Xs-rMn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dtL-NZ-n1y"/>
+                            <constraint firstItem="blR-Um-ZiM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g9G-8N-n68"/>
+                            <constraint firstItem="nYR-Xs-rMn" firstAttribute="top" secondItem="blR-Um-ZiM" secondAttribute="bottom" constant="8" id="lWR-vo-iYt"/>
+                            <constraint firstItem="blR-Um-ZiM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zvq-5e-Krj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ISS Passes" id="sqv-e0-G3K">
+                        <barButtonItem key="rightBarButtonItem" title="View Passes" id="Ehu-b5-NgE">
+                            <connections>
+                                <segue destination="dwx-Ff-Yrq" kind="show" id="VlN-PN-XUq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="issLocationButton" destination="nYR-Xs-rMn" id="scN-1r-k8T"/>
+                        <outlet property="mapView" destination="blR-Um-ZiM" id="mMe-uq-s8N"/>
+                        <outlet property="showAllButton" destination="OJh-GE-HY7" id="Vjg-00-7a7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775.20000000000005" y="795.81280788177344"/>
+        </scene>
+        <!--ISS Passes-->
+        <scene sceneID="c8v-UN-6yn">
+            <objects>
+                <navigationController title="ISS Passes" id="MqE-rO-2z7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BW9-ml-cB9">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7VJ-gC-xiz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6vo-ZX-2Sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="797"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Tsj-ta-2bP">
+            <objects>
+                <tableViewController id="dwx-Ff-Yrq" customClass="ISSTableViewController" customModule="iss_passes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="I6k-Nh-M5u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gW0-0R-C0r">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gW0-0R-C0r" id="P4X-xF-oe3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dwx-Ff-Yrq" id="stz-xm-e1B"/>
+                            <outlet property="delegate" destination="dwx-Ff-Yrq" id="nsN-G8-SMe"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rTs-lJ-egL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657" y="797"/>
+        </scene>
+    </scenes>
+</document>
